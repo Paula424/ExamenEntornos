@@ -6,7 +6,7 @@ import java.io.Serializable;
  *
  * @author Paula
  */
-public class Cuenta implements Serializable {
+public class Cuenta implements Serializable, Operable {
 
 	private String iban;
 	private String titular;
@@ -27,10 +27,12 @@ public class Cuenta implements Serializable {
 		this.dni = "";
 	}
 
+	@Override
 	public void ingresar(double cantidad) {
 		this.setSaldo(this.getSaldo() + cantidad);
 	}
 
+	@Override
 	public void retirar(double cantidad) {
 		this.setSaldo(this.getSaldo() - cantidad);
 	}

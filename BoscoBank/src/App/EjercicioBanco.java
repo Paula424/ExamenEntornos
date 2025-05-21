@@ -26,6 +26,9 @@ public class EjercicioBanco {
 		return opcion;
 	}
 
+	public static crearCuenta() {
+		
+	}
 	public static String leerCodigoCuenta(Banco banco) {
 		System.out.println(banco.mostrarCuentas());
 		String codigoCuenta = "";

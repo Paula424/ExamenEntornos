@@ -7,6 +7,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+import Util.Utilidades;
+
 /**
  *
  * @author Paula
@@ -88,7 +90,7 @@ public class Banco implements Serializable {
     }
 
     public boolean ingresar(String codigo, double importe) {
-        Cuenta c = localizarCuenta(codigo);
+        Operable c = localizarCuenta(codigo);
         if (c == null) // no se encuentra una cuenta con ese codigo
         {
             return false;
@@ -99,7 +101,7 @@ public class Banco implements Serializable {
     }
 
     public boolean retirar(String codigo, double importe) {
-        Cuenta c = localizarCuenta(codigo);
+        Operable c = localizarCuenta(codigo);
         if (c == null) // no se encuentra una cuenta con ese codigo
         {
             return false;
@@ -114,7 +116,7 @@ public class Banco implements Serializable {
     }
 
     public String consultarCuenta(String codigo) {
-        Cuenta c = localizarCuenta(codigo);
+        Operable c = localizarCuenta(codigo);
         if (c != null) {
             return c.toString();
         } else {
